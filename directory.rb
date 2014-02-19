@@ -1,27 +1,4 @@
 
-students = [
-  {:name => "Mario Gintili", :cohort => :February},
-  {:name => "Mikhail Dubov", :cohort => :February},
-  {:name => "Karolis Noreika", :cohort => :February},
-  {:name => "Michael Sidon", :cohort => :February},
-  {:name => "Charles De Barros", :cohort => :February},
-  {:name => "Ruslan Vikhor", :cohort => :February},
-  {:name => "Toby Retallick", :cohort => :February},
-  {:name => "Mark Mekhaiel", :cohort => :February},
-  {:name => "Sarah Young", :cohort => :February},
-  {:name => "Hannah Wight", :cohort => :February},
-  {:name => "Khushkaran Singh", :cohort => :February},
-  {:name => "Rick brunstedt", :cohort => :February},
-  {:name => "Manjit Singh", :cohort => :February},
-  {:name => "Ross Hepburn", :cohort => :February},
-  {:name => "Tiffanie Chia", :cohort => :February},
-  {:name => "Matthew Thomas", :cohort => :February},
-  {:name => "Freddy McGroarty", :cohort => :February},
-  {:name => "Tyler Rollins", :cohort => :February}, 
-  {:name => "Richard Curteis", :cohort => :February}, 
-  {:name => "Anna Yanova", :cohort => :February},
-  {:name => "Andrew Cumine", :cohort => :February}
-]
 def header
 puts "Student Directory - My Makers Academy Cohort"
 puts "-------------------"
@@ -35,6 +12,28 @@ def footer(students)
 puts "Overall, there are #{students.length} awesome students."
 end
 
+
+def input_students
+	puts "Enter the names of the students"
+	puts "Hit return twice when done."
+	#create empty array
+	students = []
+	#get name
+	name = gets.chomp
+	#while name is not empty, repeat
+	while !name.empty? do
+		#add hash to empty array
+		students << {:name => name, :cohort => :February}
+		puts "Now we have #{students.length} students"
+		#get another name
+		name = gets.chomp
+	end
+	#return array students
+	students
+end
+
+students = input_students
 header
 print(students)
 footer(students)
+
