@@ -1,3 +1,4 @@
+# First - List of students
 puts "Student Directory - My Makers Academy Cohort"
 puts "-------------------"
 puts "Mario Gintili"
@@ -21,4 +22,5 @@ puts "Tyler Rollins"
 puts "Richard Curteis"
 puts "Anna Yanova"
 puts "Andrew Cumine"
+# Student count
 puts "Overall, there are 21 awesome students."
