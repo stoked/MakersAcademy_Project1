@@ -22,10 +22,19 @@ students = [
   "Anna Yanova",
   "Andrew Cumine"
 ]
-# First - List of students
+def header
 puts "Student Directory - My Makers Academy Cohort"
 puts "-------------------"
-students.each { |student| puts student }
+end
 
-# Student count
-puts "Overall, there are #{students.length} awesome students."
+def print(names)
+names.each { |name| puts name }
+end
+
+def footer(names)
+puts "Overall, there are #{names.length} awesome students."
+end
+
+header
+print(students)
+footer(students)
