@@ -1,27 +1,31 @@
-student_count = 23
+
+students = [
+  "Mario Gintili",
+  "Mikhail Dubov",
+  "Karolis Noreika",
+  "Michael Sidon",
+  "Charles De Barros",
+  "Ruslan Vikhor",
+  "Toby Retallick",
+  "Mark Mekhaiel",
+  "Sarah Young",
+  "Hannah Wight",
+  "Khushkaran Singh",
+  "Rick brunstedt",
+  "Manjit Singh",
+  "Ross Hepburn",
+  "Tiffanie Chia",
+  "Matthew Thomas",
+  "Freddy McGroarty",
+  "Tyler Rollins",
+  "Richard Curteis",
+  "Anna Yanova",
+  "Andrew Cumine"
+]
 # First - List of students
 puts "Student Directory - My Makers Academy Cohort"
 puts "-------------------"
-puts "Mario Gintili"
-puts "Mikhail Dubov"
-puts "Karolis Noreika"
-puts "Michael Sidon"
-puts "Charles De Barros"
-puts "Ruslan Vikhor"
-puts "Toby Retallick"
-puts "Mark Mekhaiel"
-puts "Sarah Young"
-puts "Hannah Wight"
-puts "Khushkaran Singh"
-puts "Rick brunstedt"
-puts "Manjit Singh"
-puts "Ross Hepburn"
-puts "Tiffanie Chia"
-puts "Matthew Thomas"
-puts "Freddy McGroarty"
-puts "Tyler Rollins"
-puts "Richard Curteis"
-puts "Anna Yanova"
-puts "Andrew Cumine"
+students.each { |student| puts student }
+
 # Student count
-puts "Overall, there are #{student_count} awesome students."
+puts "Overall, there are #{students.length} awesome students."
