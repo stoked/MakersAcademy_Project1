@@ -1,3 +1,4 @@
+student_count = 23
 # First - List of students
 puts "Student Directory - My Makers Academy Cohort"
 puts "-------------------"
@@ -23,4 +24,4 @@ puts "Richard Curteis"
 puts "Anna Yanova"
 puts "Andrew Cumine"
 # Student count
-puts "Overall, there are 21 awesome students."
+puts "Overall, there are #{student_count} awesome students."
