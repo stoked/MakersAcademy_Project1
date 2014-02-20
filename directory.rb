@@ -5,7 +5,7 @@ print "-------------------\n"
 end
 
 def show(students)
-students.each { |student| print "#{student[:name]} (#{student[:cohort]} cohort)" }
+students.each_with_index { |student, index| print "#{index + 1}. #{student[:name]} (#{student[:cohort]} cohort)" }
 end
 
 def footer(students)
