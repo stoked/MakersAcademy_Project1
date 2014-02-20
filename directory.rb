@@ -1,21 +1,21 @@
 
 def header
-puts "Student Directory - My Makers Academy Cohort"
-puts "-------------------"
+print "Student Directory - My Makers Academy Cohort\n"
+print "-------------------\n"
 end
 
-def print(students)
-students.each { |student| puts "#{student[:name]} (#{student[:cohort]} cohort)" }
+def show(students)
+students.each { |student| print "#{student[:name]} (#{student[:cohort]} cohort)" }
 end
 
 def footer(students)
-puts "Overall, there are #{students.length} awesome students."
+print "Overall, there are #{students.length} awesome students.\n"
 end
 
 
 def input_students
-	puts "Enter the names of the students"
-	puts "Hit return twice when done."
+	print "Enter the names of the students\n"
+	print "Hit return twice when done.\n"
 	#create empty array
 	students = []
 	#get name
@@ -24,7 +24,7 @@ def input_students
 	while !name.empty? do
 		#add hash to empty array
 		students << {:name => name, :cohort => :February}
-		puts "Now we have #{students.length} students"
+		print "Now we have #{students.length} students\n"
 		#get another name
 		name = gets.chomp
 	end
@@ -34,6 +34,5 @@ end
 
 students = input_students
 header
-print(students)
+show(students)
 footer(students)
-
