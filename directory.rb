@@ -4,13 +4,11 @@ print "Student Directory - My Makers Academy Cohort\n"
 print "-------------------\n"
 end
 
-def student_a(student)
-	student[:name][0] == "a".capitalize!
-end
+
 
 def show(students)
 students.each_with_index do |student, index| 
-	if student_a(student) 
+	if student[:name].length < 12 
 		print  "#{index + 1}. #{student[:name]} (#{student[:cohort]} cohort)\n"
 	end
 end
