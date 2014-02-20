@@ -11,7 +11,7 @@ end
 def show(students)
 students.each_with_index do |student, index| 
 	if student_a(student) 
-		print  "#{index + 1}. #{student[:name]} if student (#{student[:cohort]} cohort)\n"
+		print  "#{index + 1}. #{student[:name]} (#{student[:cohort]} cohort)\n"
 	end
 end
 end
