@@ -4,21 +4,6 @@ print "Student Directory - My Makers Academy Cohort\n"
 print "-------------------\n"
 end
 
-
-
-def show(students)
-students.each_with_index do |student, index| 
-	if student[:name].length < 12 
-		print  "#{index + 1}. #{student[:name]} (#{student[:cohort]} cohort)\n"
-	end
-end
-end
-
-def footer(students)
-print "Overall, there are #{students.length} awesome students.\n"
-end
-
-
 def input_students
 	print "Enter the names of the students\n"
 	print "Hit return twice when done.\n"
@@ -37,6 +22,22 @@ def input_students
 	#return array students
 	students
 end
+
+def show(students)
+  n = 0
+  while n < students.length
+		print  "#{students[n][:name]} (#{students[n][:cohort]} cohort)\n"
+		n += 1
+	end
+end
+
+
+def footer(students)
+print "Overall, there are #{students.length} awesome students.\n"
+end
+
+
+
 
 students = input_students
 header
