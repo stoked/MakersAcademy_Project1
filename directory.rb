@@ -1,43 +1,48 @@
 
 def header
-print "Student Directory - My Makers Academy Cohort\n"
-print "-------------------\n"
+puts "Student Directory - My Makers Academy Cohort"
+puts "-------------------"
 end
 
 def input_students
-	print "Enter the names of the students\n"
-	print "Hit return twice when done.\n"
-	#create empty array
 	students = []
-	#get name
+	puts "Please enter first name?"
 	name = gets.chomp.capitalize
-	#while name is not empty, repeat
+	puts "Please eneter your last name?"
+	lastname = gets.chomp.capitalize
+	puts "Where are you from?"
+	country = gets.chomp.upcase
+	
 	while !name.empty? do
-		#add hash to empty array
-		students << {:name => name, :cohort => :February}
-		print "Now we have #{students.length} students\n"
-		#get another name
+		students << {:name => name, :lastname => lastname, :country => country, :cohort => :February}
+		puts "Now we have #{students.length} students"
 		name = gets.chomp.capitalize
-	end
-	#return array students
-	students
+
+	puts "Would you like to add another student? Yes/No"
+	another = gets.chomp.downcase
+	if another == "yes"
+  puts "Please enter first name?"
+	name = gets.chomp.capitalize
+	puts "Please eneter your last name?"
+	lastname = gets.chomp.capitalize
+	puts "Where are you from?"
+	country = gets.chomp.upcase
+	else 
+		break
+end
+end
+students
 end
 
 def show(students)
-  n = 0
-  while n < students.length
-		print  "#{students[n][:name]} (#{students[n][:cohort]} cohort)\n"
-		n += 1
+   students.each_with_index do |student, index|
+		puts  "#{index += 1}: #{student[:name]} #{student[:lastname]} from #{student[:country]} - (#{student[:cohort]} cohort)".center(400)
 	end
 end
 
-
 def footer(students)
-print "Overall, there are #{students.length} awesome students.\n"
+puts "Overall, there are #{students.length} awesome students."
 end
-
-
-
 
 students = input_students
 header
