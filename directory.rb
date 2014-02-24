@@ -10,13 +10,13 @@ def input_students
 	#gets user input
 	students = []
 	puts "Please enter first name?"
-	name = gets.chomp.capitalize
+	name = gets.capitalize.delete "\n"
 	puts "Please eneter your last name?"
-	lastname = gets.chomp.capitalize
+	lastname = gets.capitalize.delete "\n"
 	puts "Where are you from?"
-	country = gets.chomp.upcase
+	country = gets.upcase.delete "\n"
 	puts "What cohort are you attending?"
-	cohort = gets.chomp.capitalize
+	cohort = gets.capitalize.delete "\n"
 	#default values
 	name = "NA".to_sym if name.empty?
 	lastname = "NA".to_sym if lastname.empty?
@@ -29,21 +29,21 @@ def input_students
 	  	puts "Now we have #{students.length} student"
       else 
 	    puts "Now we have #{students.length} students"
-	    name = gets.chomp.capitalize
+	    name = gets.capitalize.delete "\n"
       end
 	  
 	  puts "Would you like to add another student? Yes/No"
-	  another = gets.chomp.downcase
+	  another = gets.downcase.delete "\n"
 	
 	if another == "yes"
       puts "Please enter first name?"
-	  name = gets.chomp.capitalize
+	  name = gets.capitalize.delete "\n"
 	  puts "Please eneter your last name?"
-	  lastname = gets.chomp.capitalize
+	  lastname = gets.capitalize.delete "\n"
 	  puts "Where are you from?"
-	  country = gets.chomp.upcase
+	  country = gets.upcase.delete "\n"
 	  puts "What cohort are you attending?"
-	  cohort = gets.chomp.capitalize
+	  cohort = gets.capitalize.delete "\n"
 	else 
 		break
     end
