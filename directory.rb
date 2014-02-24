@@ -4,7 +4,8 @@ def header
   puts "Student Directory - My Makers Academy Cohort"
   puts "-------------------"
 end
-
+puts "Please enter the requested information."
+puts "To finish, just hit return twice."
 def input_students
 	#gets user input
 	students = []
@@ -24,9 +25,13 @@ def input_students
    
    	while !name.empty? do
       students << {:name => name, :lastname => lastname, :country => country, :cohort => cohort}
-	  puts "Now we have #{students.length} students"
-	  name = gets.chomp.capitalize
-
+	  if students.length < 2
+	  	puts "Now we have #{students.length} student"
+      else 
+	    puts "Now we have #{students.length} students"
+	    name = gets.chomp.capitalize
+      end
+	  
 	  puts "Would you like to add another student? Yes/No"
 	  another = gets.chomp.downcase
 	
@@ -55,14 +60,12 @@ def group(students)
 	end
 end
 
-def show(students)
-    students.each_with_index do |student, index|
-		puts  "#{index += 1}: #{student[:name]} #{student[:lastname]} from #{student[:country]} - (#{student[:cohort]} cohort)".center(400)
-    end
-end
-
 def footer(students)
-  puts "Overall, there are #{students.length} awesome students."
+  if students.length < 2 
+  	puts "Overall, there is #{students.length} amazing student!"
+  else
+    puts "Overall, there are #{students.length} awesome students!"
+end
 end
 
 students = input_students
