@@ -33,6 +33,11 @@ def input_students
 end
 
 students = input_students
-print_header
-show(students)
-print_footer(students)
+
+if !students.empty?
+  print_header
+  show(students)
+  print_footer(students)
+else
+  puts "ERROR! NO INFORMATION! ABORT! PANIC! RUUUUNNNNN!"
+end
