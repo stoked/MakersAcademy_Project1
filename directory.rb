@@ -1,5 +1,5 @@
+#Student Directory 2 - MA Projects
 
-#header
 def header
   puts "Student Directory - My Makers Academy Cohort"
   puts "-------------------"
@@ -7,7 +7,7 @@ end
 puts "Please enter the requested information."
 puts "To finish, just hit return twice."
 def input_students
-	#gets user input
+	
 	students = []
 	puts "Please enter first name?"
 	name = gets.capitalize.delete "\n"
@@ -17,7 +17,7 @@ def input_students
 	country = gets.upcase.delete "\n"
 	puts "What cohort are you attending?"
 	cohort = gets.capitalize.delete "\n"
-	#default values
+	
 	name = "NA".to_sym if name.empty?
 	lastname = "NA".to_sym if lastname.empty?
 	country = "NA".to_sym if country.empty?
@@ -30,7 +30,7 @@ def input_students
       else 
 	    puts "Now we have #{students.length} students"
 	    name = gets.capitalize.delete "\n"
-      end
+	   end
 	  
 	  puts "Would you like to add another student? Yes/No"
 	  another = gets.downcase.delete "\n"
@@ -69,6 +69,10 @@ end
 end
 
 students = input_students
-header
-group(students)
-footer(students)
+  if !students.empty?
+    header
+    group(students)
+    footer(students)
+  else 
+	puts "ERROR!!! ABORT! ABORT!"
+  end
