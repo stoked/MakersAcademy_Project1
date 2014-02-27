@@ -1,25 +1,35 @@
 #Student Directory 2 - MA Projects
+@students = []
+
+def menu
+	puts "1. Input students"
+    puts "2. Show the students"
+    puts "9. Exit"
+end
+
+def show_students
+	header
+    student_list
+    footer
+end
 
 def interactive_menu
-	students = []
 	loop do
-      puts "1. Input students"
-      puts "2. Show the students"
-      puts "9. Exit"
-      selection = gets.chomp
-     
+		menu
+		process(gets.chomp)
+	end
+end
+
+def process(selection)
       case selection
       when "1"
-      	students = input_students
+      	input_students
       when "2"
-      	header
-        group(students)
-        footer(students)
+      	show_students
       when "9"
       	exit
       else puts "I don't know what you meant...Try Again!"
       end
-    end
 end
 
 def header
@@ -30,7 +40,7 @@ puts "Please enter the requested information."
 puts "To finish, just hit return twice."
 def input_students
 	
-	students = []
+	
 	puts "Please enter first name?"
 	name = gets.capitalize.delete "\n"
 	puts "Please eneter your last name?"
@@ -46,11 +56,11 @@ def input_students
     cohort = "NA".to_sym if cohort.empty?
    
    	while !name.empty? do
-      students << {:name => name, :lastname => lastname, :country => country, :cohort => cohort}
-	  if students.length < 2
-	  	puts "Now we have #{students.length} student"
+      @students << {:name => name, :lastname => lastname, :country => country, :cohort => cohort}
+	  if @students.length < 2
+	  	puts "Now we have #{@students.length} student"
       else 
-	    puts "Now we have #{students.length} students"
+	    puts "Now we have #{@students.length} students"
 	    name = gets.capitalize.delete "\n"
 	   end
 	  
@@ -70,31 +80,31 @@ def input_students
 		break
     end
 end
-students
+@students
 end
 
-def group(students)
-	cohorts = students.map{|student| student[:cohort] }.uniq
+def student_list
+	cohorts = @students.map{|student| student[:cohort] }.uniq
 	cohorts.each do |cohort|
 		puts "The students for the #{cohort} cohort are:"
 		puts
-		students.each_with_index { |student, index| puts "#{index += 1}. #{student[:name]} #{student[:lastname]} from #{student[:country]}- (#{student[:cohort]} cohort)" if student[:cohort] == cohort }
+		@students.each_with_index { |student, index| puts "#{index += 1}. #{student[:name]} #{student[:lastname]} from #{student[:country]}- (#{student[:cohort]} cohort)" if student[:cohort] == cohort }
 	end
 end
 
-def footer(students)
-  if students.length < 2 
-  	puts "Overall, there is #{students.length} amazing student!"
+def footer
+  if @students.length < 2 
+  	puts "Overall, there is #{@students.length} amazing student!"
   else
-    puts "Overall, there are #{students.length} awesome students!"
+    puts "Overall, there are #{@students.length} awesome students!"
 end
 end
 
 students = interactive_menu
   if !students.empty?
     header
-    group(students)
-    footer(students)
+    group
+    footer
   else 
 	puts "ERROR!!! ABORT! ABORT!"
   end
