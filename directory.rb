@@ -1,5 +1,27 @@
 #Student Directory 2 - MA Projects
 
+def interactive_menu
+	students = []
+	loop do
+      puts "1. Input students"
+      puts "2. Show the students"
+      puts "9. Exit"
+      selection = gets.chomp
+     
+      case selection
+      when "1"
+      	students = input_students
+      when "2"
+      	header
+        group(students)
+        footer(students)
+      when "9"
+      	exit
+      else puts "I don't know what you meant...Try Again!"
+      end
+    end
+end
+
 def header
   puts "Student Directory - My Makers Academy Cohort"
   puts "-------------------"
@@ -68,7 +90,7 @@ def footer(students)
 end
 end
 
-students = input_students
+students = interactive_menu
   if !students.empty?
     header
     group(students)
